@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kyrgyz-normalizer"
-version = "0.1.0"
-description = "Кыргызча текст нормализатор TTS системалары үчүн / Kyrgyz text normalizer for TTS systems"
+version = "0.2.0"
+description = "Кыргызча текст нормализатор TTS системасы үчүн / Kyrgyz text normalizer for TTS systems"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.7"
 authors = [
     {name = "Kyrgyz Normalizer Contributors"}
 ]
-keywords = ["kyrgyz", "normalizer", "tts", "text-to-speech", "nlp", "кыргызча"]
+keywords = ["kyrgyz", "normalizer", "tts", "nlp", "text-processing", "кыргызча"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -26,6 +26,9 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Text Processing :: Linguistic",
 ]
+
+[project.scripts]
+kyrgyz-normalizer = "kyrgyz_normalizer.normalizer:main"
 
 [project.urls]
 Homepage = "https://github.com/AlibekovNurtilek/kyrgyz-normalizer"
