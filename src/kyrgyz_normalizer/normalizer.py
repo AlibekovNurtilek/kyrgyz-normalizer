@@ -236,8 +236,8 @@ class KyrgyzTextNormalizer:
         self._p_date_invalid = re.compile(
             r'\b\d*\d{3,}\d*(?:[./]\d+)+\b|(?<!\d[./])\b\d+(?:[./]\d*\d{3,}\d*)+\b')
         self._p_date_year_word = re.compile(r'(\d{4})\s*-?\s*жылдын\s+(\d{1,2})\s*-?\s*(\w+)')
-        self._p_date_dmy_comma = re.compile(r'(\d{1,2})\s*-?\s*(\w+),?\s*(\d{4})\s*[-\.]\s*жыл')
-        self._p_date_dmy_space = re.compile(r'(\d{1,2})\s*-?\s*(\w+)\s+(\d{4})\s*[-\.]\s*жыл')
+        self._p_date_dmy_comma = re.compile(r'\b(\d{1,2})\s*-?\s*(\w+),?\s*(\d{4})\s*[-\.]\s*жыл\b')
+        self._p_date_dmy_space = re.compile(r'\b(\d{1,2})\s*-?\s*(\w+)\s+(\d{4})\s*[-\.]\s*жыл\b')
         self._p_date_iso_time = re.compile(r'(\d{4})-(\d{2})-(\d{2})\s+(\d{1,2}):(\d{2})')
         self._p_date_iso = re.compile(r'\b(\d{4})-(\d{1,2})-(\d{1,2})\b')
         self._p_date_text_month = re.compile(

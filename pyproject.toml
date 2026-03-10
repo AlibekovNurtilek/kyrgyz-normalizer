@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kyrgyz-normalizer"
-version = "0.2.0"
+version = "0.2.1"
 description = "Кыргызча текст нормализатор TTS системасы үчүн / Kyrgyz text normalizer for TTS systems"
 readme = "README.md"
 license = "MIT"
@@ -36,3 +36,6 @@ Issues = "https://github.com/AlibekovNurtilek/kyrgyz-normalizer/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
