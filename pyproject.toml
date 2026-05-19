@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kyrgyz-normalizer"
-version = "0.2.1"
+version = "0.3.0"
 description = "Кыргызча текст нормализатор TTS системасы үчүн / Kyrgyz text normalizer for TTS systems"
 readme = "README.md"
 license = "MIT"

@@ -43,12 +43,6 @@ class KyrgyzTextNormalizer:
             '9': 'сентябрь',
         }
 
-        self.month_abbr = {
-            'янв': 'январь', 'фев': 'февраль', 'мар': 'март', 'апр': 'апрель',
-            'июн': 'июнь', 'июл': 'июль', 'авг': 'август',
-            'сен': 'сентябрь', 'окт': 'октябрь', 'ноя': 'ноябрь', 'дек': 'декабрь',
-        }
-
         self.short_abbr = {
             'ж.б.у.с.': 'жана башка ушул сыяктуу',
             'ж.б.': 'жана башка',
@@ -217,10 +211,6 @@ class KyrgyzTextNormalizer:
         self._short_abbr_compiled = [
             (re.compile(rf'(?<![а-яөүңА-ЯӨҮҢA-Za-z0-9]){re.escape(a)}(?![а-яөүңА-ЯӨҮҢA-Za-z0-9])'), f)
             for a, f in short_sorted
-        ]
-        self._month_abbr_compiled = [
-            (re.compile(rf'\b{re.escape(a)}\.?\b', re.IGNORECASE), f)
-            for a, f in self.month_abbr.items()
         ]
 
         # --- Email, телефон ---
@@ -587,8 +577,6 @@ class KyrgyzTextNormalizer:
 
     def _normalize_short_abbr(self, text):
         for pat, full in self._short_abbr_compiled:
-            text = pat.sub(full, text)
-        for pat, full in self._month_abbr_compiled:
             text = pat.sub(full, text)
         return text
 
